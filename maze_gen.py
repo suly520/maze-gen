@@ -1,5 +1,6 @@
 from graphics import Window
 from cell import Cell
+from maze import Maze
 
 if __name__ == '__main__':
     win_x_max = 400
@@ -23,12 +24,20 @@ if __name__ == '__main__':
     # win.draw_line(line=line_2, fill_color=color_2)
     # win.draw_line(line=line_3, fill_color=color_3)
 
-    first_cell = Cell(x1=50, y1=50, x2=100, y2=100)
-    second_cell = Cell(x1=100, y1=50, x2=150, y2=100, bottom=False)
-    third_cell = Cell(x1=150, y1=50, x2=200, y2=100, top=False)
-    win.draw_cell(first_cell)
-    win.draw_cell(second_cell)
-    win.draw_cell(third_cell)
+    # first_cell = Cell(win)
+    # first_cell.has_right = False
+    # first_cell.draw(x1=50, y1=50, x2=100, y2=100)
+
+    # second_cell = Cell(win)
+    # second_cell.has_bottom = False
+    # second_cell.draw(x1=100, y1=50, x2=150, y2=100)
+
+    # third_cell = Cell(win)
+    # third_cell.has_bottom = False
+    # third_cell.draw(x1=150, y1=50, x2=200, y2=100)
     
+    # first_cell.draw_move(second_cell)
+
+    maze = Maze(x1=0, y1=0, num_rows=10, num_cols=10, cell_size_x=20, cell_size_y=20, win=win)
 
     win.wait_for_close()
